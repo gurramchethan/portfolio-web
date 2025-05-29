@@ -1,17 +1,17 @@
+// src/components/Projects/Projects.jsx
 import React from "react";
-
+import { ProjectCard } from "../ProjectCard/ProjectCard"; // Corrected import path
+import projectsData from "../../data/projects.json"; // Ensure this path is correct
 import styles from "./Projects.module.css";
-import projects from "../../data/projects.json";
-import { ProjectCard } from "./ProjectCard";
 
 export const Projects = () => {
   return (
-    <section className={styles.container} id="projects"> 
-      <h2 className={styles.title}>Projects</h2> 
-      <div className={styles.projects}>
-        {projects.map((project, id) => {
-          return <ProjectCard key={id} project={project} />;
-        })}
+    <section className={styles.projectsSection} id="projects"> {/* Added an ID for navigation */}
+      <h2 className={styles.sectionTitle}>My Projects</h2>
+      <div className={styles.projectsGrid}>
+        {projectsData.map((project, id) => (
+          <ProjectCard key={id} project={project} />
+        ))}
       </div>
     </section>
   );
