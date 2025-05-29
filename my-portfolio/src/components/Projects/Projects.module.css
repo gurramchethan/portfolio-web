@@ -1,17 +1,31 @@
-/* Projects.module.css */
+/* src/components/Projects/Projects.module.css */
+
+.projectsSection {
+  padding: 4rem 0; /* Top/bottom padding for the section */
+  background-color: var(--color-background-secondary); /* A different background color for the section */
+  text-align: center; /* Center the section title */
+}
+
+.sectionTitle {
+  font-size: 3rem;
+  font-weight: bold;
+  color: var(--color-heading);
+  margin-bottom: 3rem;
+}
 
 .projectsGrid {
   display: grid;
-  /* This is the key responsive part */
+  /* Key for responsiveness: auto-fit creates as many columns as possible
+     each with a min of 300px and max of 1fr (fractional unit) */
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  justify-content: center;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
+  gap: 2rem; /* Space between grid items (your ProjectCards) */
+  justify-content: center; /* Center items if they don't fill the entire row */
+  max-width: 1200px; /* Max width of the grid container */
+  margin: 0 auto; /* Center the grid on the page */
+  padding: 0 1rem; /* Horizontal padding for smaller screens */
 }
 
-/* --- Responsive Design for the Grid --- */
+/* --- Responsive Design for the Grid Layout --- */
 
 /* For medium screens (e.g., larger tablets, small laptops) */
 @media screen and (max-width: 1200px) {
@@ -27,14 +41,14 @@
 /* For small screens (e.g., tablets in portrait, large phones) */
 @media screen and (max-width: 768px) {
   .projectsSection {
-    padding: 3rem 0; /* Adjust section padding */
+    padding: 3rem 0;
   }
   .sectionTitle {
-    font-size: 2rem; /* Even smaller title */
+    font-size: 2rem;
     margin-bottom: 2rem;
   }
   .projectsGrid {
-    grid-template-columns: 1fr; /* **Single column on very small screens** */
+    grid-template-columns: 1fr; /* Forces a single column on smaller screens */
     gap: 1.5rem;
     padding: 0 1rem;
   }
@@ -43,9 +57,9 @@
 /* For very small screens (e.g., smaller phones) */
 @media screen and (max-width: 480px) {
   .projectsSection {
-    padding: 2rem 0; /* Less padding */
+    padding: 2rem 0;
   }
   .sectionTitle {
-    font-size: 1.8rem; /* Smallest title */
+    font-size: 1.8rem;
   }
 }
