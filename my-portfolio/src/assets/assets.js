@@ -26,7 +26,7 @@ import terraform_logo from './skills/terraform.png';
 import aws_logo from './skills/aws.png';
 
 // CI/CD & Deployment
-import jenkins_logo from './skills/jenkins.png';
+import jenkins_logo from './skills/Jenkins.png';
 import prometheus_logo from './skills/prometheus.png';
 import grafana_logo from './skills/grafana.png';
 
