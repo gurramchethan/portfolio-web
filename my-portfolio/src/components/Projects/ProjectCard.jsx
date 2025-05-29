@@ -1,8 +1,7 @@
-
+// src/components/ProjectCard/ProjectCard.jsx
 import React from "react";
-import {assets} from '../../assets/assets.js';
+import { assets } from '../../assets/assets.js'; // Ensure this path is correct
 import styles from "./ProjectCard.module.css";
-// import { getImageUrl } from "../../utils";
 
 export const ProjectCard = ({
   project: { title, imageSrc, description, skills, demo, source },
@@ -10,7 +9,7 @@ export const ProjectCard = ({
   return (
     <div className={styles.container}>
       <img
-        src={assets[imageSrc]}
+        src={assets[imageSrc]} // This uses your assets.js to get the image path
         alt={`Image of ${title}`}
         className={styles.image}
       />
@@ -26,13 +25,17 @@ export const ProjectCard = ({
         })}
       </ul>
       <div className={styles.links}>
-        <a href={demo} className={styles.link}>
-          Demo
-        </a>
-        <a href={source} className={styles.link}>
-          Source
-        </a> 
+        {demo && ( // Only render if demo link exists
+          <a href={demo} className={styles.link} target="_blank" rel="noopener noreferrer">
+            Demo
+          </a>
+        )}
+        {source && ( // Only render if source link exists
+          <a href={source} className={styles.link} target="_blank" rel="noopener noreferrer">
+            Source
+          </a>
+        )}
       </div>
-    </div> 
+    </div>
   );
 };
