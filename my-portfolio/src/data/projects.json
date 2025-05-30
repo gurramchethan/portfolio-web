@@ -5,9 +5,9 @@
     "skills": ["React", "Node.js", "Express", "MongoDB", "Multer", "Axios", "React Router"]
   },
   {
-    "title": "Portfolio Website",
-    "description": "A modern developer portfolio built with Next.js, showcasing projects and skills with smooth animations and theming.",
-    "skills": ["Next.js", "React", "Tailwind CSS", "Framer Motion"]
+    "title": "Data Visualization of Global Socio-Economic Trends",
+    "description": "Merged three different datasets and generated a dataset using common attributes and created visualizations.",
+    "skills": ["Tableau", " d3.js", "PowerBI", "VizHub"]
   },
   {
     "title": "Library Management System",
