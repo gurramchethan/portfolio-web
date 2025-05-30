@@ -1,28 +1,20 @@
-
 [
-    {
-      "title": "Food Delivery",
-      "imageSrc": "fooddelivery_website",
-      "description": "A Full-Stack Food Delivery app where users can browse menus, place orders, make payments, and track deliveries, simulating a real-world food delivery system.",
-      "skills": ["JWT", "Redux", "React", "CSS", "Express", "Node", "MongoDB"],
-      "demo": " https://fooddeliverydharmika.vercel.app",
-      "source": "https://github.com/dharmii/food-delivery"
-    },
-    {
-      "title": "Gemini Clone",
-      "imageSrc": "geminiclone_website",
-      "description": "An AI-based platform designed to simulate intelligent responses and dynamic user interactions. It leverages advanced machine learning algorithms for generating context-aware replies and predictive analysis.",
-      "skills": ["HTML", "CSS", "JavaScript", "React"],
-      "demo": "https://gemini-clone-pi-two.vercel.app/",
-      "source": "https://github.com/dharmii/gemini-clone"
-    },
-    {
-      "title": "Chat Application",
-      "imageSrc": "chatapplication_website",
-      "description": "A real-time messaging platform that enables users to send and receive messages instantly. Features include user authentication, private and group chats, message timestamps, and online/offline status indicators",
-      "skills": ["TailwindCSS", "JavaScript","React", "Express", "Node","Socket.IO"],
-      "demo": "https://fullstack-chat-app-xxus.onrender.com",
-      "source": "https://github.com/dharmii/fullstack-chat-app"
-    }
-  ]
-  
+  {
+    "title": "Food Recipe App",
+    "imageSrc": "food-recipe-app-image",
+    "description": "A full-stack MERN application that allows users to create, view, edit, and search food recipes with image uploads. Includes RESTful API development, responsive UI, and MongoDB integration.",
+    "skills": ["React", "Node.js", "Express", "MongoDB", "Multer", "Axios", "React Router"]
+  },
+  {
+    "title": "Portfolio Website",
+    "imageSrc": "portfolio-nextjs-image",
+    "description": "A modern personal portfolio website built with Next.js featuring server-side rendering, dynamic routing, and dark/light theme support.",
+    "skills": ["Next.js", "React", "Tailwind CSS", "Framer Motion"]
+  },
+  {
+    "title": "Blog CMS with Next.js",
+    "imageSrc": "nextjs-blog-cms-image",
+    "description": "A content management system for blogs using Next.js and Markdown, complete with static site generation and dynamic content editing via GitHub.",
+    "skills": ["Next.js", "Markdown", "Tailwind CSS", "Static Generation", "GitHub API"]
+  }
+]
