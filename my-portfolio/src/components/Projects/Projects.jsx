@@ -1,6 +1,6 @@
 
 import React from "react";
-import { ProjectCard } from "../ProjectCard/ProjectCard"; // Corrected import path
+import { ProjectCard } from "./ProjectCard";
 import projectsData from "../../data/projects.json"; // Ensure this path is correct
 import styles from "./Projects.module.css";
 
