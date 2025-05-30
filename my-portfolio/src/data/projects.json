@@ -10,8 +10,8 @@
     "skills": ["Next.js", "React", "Tailwind CSS", "Framer Motion"]
   },
   {
-    "title": "Blog CMS",
-    "description": "A blog content management system using Next.js with Markdown support, static site generation, and Git-based editing.",
-    "skills": ["Next.js", "Markdown", "Tailwind CSS", "Static Generation", "GitHub API"]
+    "title": "Library Management System",
+    "description": "Library Management System is a web-based application built using HTML, CSS, and JavaScript that allows users to manage books and library members. It includes features like adding/removing books, borrowing/returning books, and user management. The system also incorporates unit testing and manual testing to ensure functionality, input validation, and responsiveness across devices.",
+    "skills": ["HTML", "CSS", "JavaScript"]
   }
 ]
