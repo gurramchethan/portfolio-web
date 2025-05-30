@@ -1,4 +1,4 @@
-// src/components/Projects/Projects.jsx
+
 import React from "react";
 import { ProjectCard } from "../ProjectCard/ProjectCard"; // Corrected import path
 import projectsData from "../../data/projects.json"; // Ensure this path is correct
