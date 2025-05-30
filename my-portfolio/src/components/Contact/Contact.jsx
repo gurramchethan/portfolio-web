@@ -11,7 +11,7 @@ export const Contact = () => {
         <p>Phone: <a href="tel:+19408430660">+1-940-843-0660</a></p>
 
 
-        <a href="/resume.pdf" download className={styles.resumeButton}>
+        <a href="/Resume.pdf" download className={styles.resumeButton}>
           My Resume
         </a>
       </div>
