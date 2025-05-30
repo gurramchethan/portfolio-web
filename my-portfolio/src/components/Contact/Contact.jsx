@@ -12,7 +12,7 @@ export const Contact = () => {
 
 
         <a href="/resume.pdf" download className={styles.resumeButton}>
-          Download My Resume
+          My Resume
         </a>
       </div>
 
