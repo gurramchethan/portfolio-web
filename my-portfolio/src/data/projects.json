@@ -11,7 +11,7 @@
   },
   {
     "title": "Library Management System",
-    "description": "Library Management System is a web-based application built using HTML, CSS, and JavaScript that allows users to manage books and library members. It includes features like adding/removing books, borrowing/returning books, and user management. The system also incorporates unit testing and manual testing to ensure functionality, input validation, and responsiveness across devices.",
+    "description": "A library management system using HTML, CSS, and JS, showcasing features and books with smooth interactions and theming.",
     "skills": ["HTML", "CSS", "JavaScript"]
   }
 ]
