@@ -1,4 +1,3 @@
-// src/components/ProjectCard/ProjectCard.jsx
 import React from "react";
 import { assets } from '../../assets/assets.js'; // Ensure this path is correct
 import styles from "./ProjectCard.module.css";
