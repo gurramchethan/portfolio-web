@@ -1,20 +1,17 @@
 [
   {
     "title": "Food Recipe App",
-    "imageSrc": "food-recipe-app-image",
-    "description": "A full-stack MERN application that allows users to create, view, edit, and search food recipes with image uploads. Includes RESTful API development, responsive UI, and MongoDB integration.",
+    "description": "A full-stack MERN app for creating, editing, and searching food recipes with image upload support.",
     "skills": ["React", "Node.js", "Express", "MongoDB", "Multer", "Axios", "React Router"]
   },
   {
     "title": "Portfolio Website",
-    "imageSrc": "portfolio-nextjs-image",
-    "description": "A modern personal portfolio website built with Next.js featuring server-side rendering, dynamic routing, and dark/light theme support.",
+    "description": "A modern developer portfolio built with Next.js, showcasing projects and skills with smooth animations and theming.",
     "skills": ["Next.js", "React", "Tailwind CSS", "Framer Motion"]
   },
   {
-    "title": "Blog CMS with Next.js",
-    "imageSrc": "nextjs-blog-cms-image",
-    "description": "A content management system for blogs using Next.js and Markdown, complete with static site generation and dynamic content editing via GitHub.",
+    "title": "Blog CMS",
+    "description": "A blog content management system using Next.js with Markdown support, static site generation, and Git-based editing.",
     "skills": ["Next.js", "Markdown", "Tailwind CSS", "Static Generation", "GitHub API"]
   }
 ]
