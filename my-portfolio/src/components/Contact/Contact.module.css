@@ -1,173 +1,67 @@
-/* src/components/Contact/Contact.module.css */
-@import "../../vars.css";
-
 .container {
-  color: var(--color-text-light); /* Text color for dark background */
-  background-color: var(--color-bg-primary); /* Main dark background color */
-  padding: 58px 10%; /* Consistent padding with other sections */
-  width: 100%;
-  box-sizing: border-box; /* Include padding in width */
+  background-color: #1e1e1e;
+  color: #ffffff;
+  padding: 3rem 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.contactInfo {
   text-align: center;
-  gap: 30px; /* Increased gap for better spacing */
-  box-shadow: none; /* Remove previous strong shadow */
-  border-top: 1px solid rgba(255, 255, 255, 0.1); /* Subtle top border for separation */
+  margin-bottom: 2rem;
 }
 
-.text {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 20px; /* Space below text block */
+.contactInfo h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  color: #00bcd4;
 }
 
-.text h2 {
-  font-size: 35px; /* Consistent with other section titles */
-  font-weight: 700;
-  letter-spacing: 1.75px; /* Consistent with other section titles */
-  text-transform: uppercase;
-  color: var(--color-text-light); /* Ensures heading is visible on dark background */
-  margin-bottom: 10px; /* Space between title and paragraph */
+.contactInfo p {
+  margin: 0.5rem 0;
+  font-size: 1rem;
 }
 
-.text p {
-  font-size: 20px;
-  font-weight: 400;
-  letter-spacing: 1px; /* Slightly adjusted for readability */
-  color: var(--color-text-secondary); /* A lighter shade for body text */
-}
-
-.contactButton {
-  display: inline-flex; /* Use inline-flex to make it respect its content width */
-  align-items: center;
-  justify-content: center; /* Center content horizontally */
-  gap: 8px;
+.contactInfo a {
+  color: #ffffff;
   text-decoration: none;
-  background-color: var(--color-accent); /* Use your accent color */
-  color: var(--color-text-light); /* White text */
-  border-radius: 8px; /* Slightly rounded corners */
-  font-size: 18px;
-  font-weight: 600;
-  padding: 12px 25px; /* Generous padding for a clear button */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-  border: none; /* No border */
-  transition: background-color 0.3s ease, transform 0.3s ease;
-  cursor: pointer;
-  white-space: nowrap;
-  margin-bottom: 30px; /* Space below the contact button */
-}
-
-.contactButton:hover {
-  background-color: var(--color-hover); /* Hover color from vars.css */
-  transform: translateY(-3px) scale(1.02); /* More noticeable lift and slight scale */
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
-}
-
-.links {
-  display: flex;
-  flex-direction: row; /* Arrange links horizontally on desktop */
-  align-items: center;
-  list-style: none;
-  padding: 0;
-  gap: 30px; /* Space between social links */
-  flex-wrap: wrap; /* Allow links to wrap on smaller screens */
-  justify-content: center; /* Center horizontally when wrapped */
-}
-
-.link {
-  display: flex;
-  align-items: center;
-  gap: 10px; /* Gap between icon and text */
-}
-
-.link img {
-  width: 35px; /* Slightly smaller icon size */
-  height: 35px;
-  flex-shrink: 0;
-}
-
-.link a {
-  color: var(--color-text-light); /* Light text color for links */
-  text-decoration: none;
-  font-size: 18px;
-  font-weight: 400;
+  font-weight: bold;
   transition: color 0.3s ease;
 }
 
-.link a:hover {
-  color: var(--color-accent); /* Change link color on hover */
+.contactInfo a:hover {
+  color: #00bcd4;
+}
+
+.resumeButton {
+  margin-top: 1.5rem;
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: #00bcd4;
+  color: #1e1e1e;
+  font-weight: bold;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.resumeButton:hover {
+  background-color: #0197a7;
 }
 
 .footerBottom {
+  width: 100%;
+  border-top: 1px solid #444;
+  padding-top: 1rem;
   display: flex;
   justify-content: space-between;
-  width: 100%; /* Take full width of the container */
-  margin-top: 50px; /* Space from links above */
-  border-top: 1px solid rgba(255, 255, 255, 0.1); /* Subtle white border */
-  padding-top: 20px;
-  background: none; /* Remove gradients from footerBottom */
-  flex-wrap: wrap; /* Allow copyright and madeWithLove to wrap */
-  gap: 15px; /* Gap when items wrap */
+  flex-wrap: wrap;
+  font-size: 0.9rem;
 }
 
-.copyright,
-.madeWithLove {
-  font-size: 14px;
-  font-weight: 400;
-  color: var(--color-text-secondary); /* Consistent text color */
-}
-
-/* Mobile Responsive Styles */
-@media screen and (max-width: 830px) {
-  .container {
-    padding: 40px 8%; /* Adjusted padding for tablets */
-    gap: 25px; /* Adjusted gap */
-  }
-
-  .text h2 {
-    font-size: 28px; /* Smaller title for mobile */
-    margin-bottom: 8px;
-  }
-
-  .text p {
-    font-size: 17px;
-  }
-
-  .contactButton {
-    font-size: 16px;
-    padding: 10px 20px;
-    margin-bottom: 25px;
-  }
-
-  .links {
-    flex-direction: column; /* Stack links vertically on mobile */
-    gap: 15px; /* Smaller gap for stacked links */
-    align-items: flex-start; /* Align links to the left in column view */
-  }
-
-  .link img {
-    width: 30px; /* Even smaller icons for mobile */
-    height: 30px;
-  }
-
-  .link a {
-    font-size: 16px;
-  }
-
-  .footerBottom {
-    flex-direction: column; /* Stack copyright and madeWithLove */
-    align-items: center; /* Center them when stacked */
-    gap: 10px;
-    margin-top: 30px;
-    padding-top: 15px;
-    width: 100%; /* Ensure full width even when stacked */
-  }
-
-  .copyright,
-  .madeWithLove {
-    font-size: 12px;
-  }
+.footerBottom p {
+  margin: 0.5rem 1rem;
+  color: #aaa;
 }
