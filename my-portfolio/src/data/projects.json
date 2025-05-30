@@ -12,6 +12,6 @@
   {
     "title": "Library Management System",
     "description": "A library management system using HTML, CSS, and JS, showcasing features and books with smooth interactions and theming.",
-    "skills": ["HTML", "CSS", "JavaScript"]
+    "skills": ["HTML", "CSS", "JavaScript", "UNIT TESTING"]
   }
 ]
