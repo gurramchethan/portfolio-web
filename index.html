@@ -121,55 +121,60 @@
 
         /* Used for projects section */
 
-        /* Navbar */
+         /* Navigation */
         .navbar {
-            background-color: rgba(255, 255, 255, 0.95) !important;
-            /* Light translucent background */
+            padding-top: 16px;
             backdrop-filter: blur(10px);
-            /* Frosted glass effect */
-            padding: 1.5rem 0;
+            background-color: rgba(255, 255, 255, 0.95) !important;
+            transition: var(--transition);
             position: fixed;
-            /* Changed to fixed for consistency */
-            width: 100%;
             top: 0;
-            left: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-            /* Subtle shadow */
+            /* offset from the top */
+            z-index: 999;
+            width: 100%;
+
         }
 
         .navbar-brand {
-            font-weight: 800;
-            font-size: 1.5rem;
-            color: var(--dark-text) !important;
-            /* Dark text for logo on light background */
+            color: var(--primary-color) !important;
+            font-weight: 700;
+            font-size: medium;
         }
 
         .navbar-nav .nav-link {
-            color: var(--dark-text) !important;
-            /* Dark text for links */
+            color: var(--dark-color) !important;
             font-weight: 500;
-            margin: 0 0.75rem;
-            transition: color 0.3s ease, transform 0.2s ease;
+            padding: 0.5rem 1rem !important;
+            transition: var(--transition);
+            position: relative;
         }
 
-        .nav-link{
-            font-weight: semi-bold;
+        /* Remove underline lines */
+        .navbar-nav .nav-link::after {
+            content: none !important;
         }
-        .navbar-nav .nav-link:hover {
-            color: var(--accent-color) !important;
-            transform: translateY(-2px);
+
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link.active {
+            color: var(--primary-color) !important;
+            /* No underline on hover */
+        }
+
+        /* Remove focus outline/box-shadow on links */
+        .navbar-nav .nav-link:focus {
+            outline: none;
+            box-shadow: none !important;
         }
 
         .navbar-toggler {
-            border: none;
+            border: none !important;
+            box-shadow: none !important;
         }
 
-        .navbar-toggler-icon {
-            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-            /* Darker icon for light navbar */
+        .navbar-toggler:focus {
+            box-shadow: none;
         }
-
+        
         /* Hero Section */
         #hero {
             background-color: var(--light-section-bg);
@@ -379,6 +384,19 @@
             height: 4px;
             background-color: var(--accent-color);
             border-radius: 5px;
+        }
+
+        #hero {
+            padding-top: 80px;
+            /* same as navbar height + some extra */
+        }
+
+        /* Optional: For smaller screens, increase the space */
+        @media (max-width: 768px) {
+            #hero {
+                padding-top: 100px;
+                /* more space for mobile */
+            }
         }
 
         /* About Section (I like to make simple and elegant design) */
@@ -905,37 +923,38 @@
 <body>
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg">
+   <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
         <div class="container">
-            <a class="navbar-brand" href="/">Siddhartha.dev</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-brand fs-4" href="/">Siddhartha.dev</a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+                aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+            <div class="collapse navbar-collapse" id="mainNavbar">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="#hero">Home</a>
+                        <a class="nav-link fw-medium" href="#hero">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#about-intro">About</a>
+                        <a class="nav-link fw-medium" href="#about-intro">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#experience">Experience</a>
+                        <a class="nav-link fw-medium" href="#experience">Experience</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#skills">Skills</a> <!-- Added Skills link -->
+                        <a class="nav-link fw-medium" href="#skills">Skills</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#projects">Works</a>
+                        <a class="nav-link fw-medium" href="#projects">Works</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#contact-form">Contact</a>
+                        <a class="nav-link fw-medium" href="#contact-form">Contact</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
+
 
 
     <!-- Hero -->
