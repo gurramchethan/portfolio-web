@@ -1,0 +1,1481 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siddhartha | Portfolio</title>
+
+    <!-- Favicon: Small icon displayed in browser tab -->
+    <link rel="icon" href="https://placehold.co/32x32/F8F9FA/101827?text=M" type="image/x-icon">
+
+    <!-- Google Fonts: Inter for modern typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- Google Fonts: Nunito & Pacifico for complementary styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&family=Pacifico&display=swap" rel="stylesheet">
+
+    <!-- Devicons: Developer icons for tech stack visuals -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+
+    <!-- Bootstrap CSS: Responsive design and components -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        crossorigin="anonymous">
+
+    <!-- Font Awesome: Icon library for UI elements -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <!-- Custom CSS -->
+    <style>
+        #hero,
+        #about-intro,
+        #skills,
+        #projects {
+            scroll-margin-top: 80px;
+            padding-top: 80px;
+        }
+
+        :root {
+            --primary-blue: #007bff;
+            /* For links and interactive elements */
+            --accent-color: #6C63FF;
+            /* Purple accent */
+
+            /* Theme Colors */
+            --dark-section-bg: #101827;
+            /* Dark background for hero, divider, CTA, footer */
+            --light-section-bg: #F8F9FA;
+            /* General light background for body and sections */
+            --card-bg: #FFFFFF;
+            /* Background for cards and light elements */
+
+            /* Text Colors */
+            --dark-text: #212529;
+            /* Main dark text on light backgrounds */
+            --light-text: #F8F9FA;
+            /* Main light text on dark backgrounds */
+            --secondary-text: #6c757d;
+            /* Secondary text color for better contrast */
+
+            /* Other variables */
+            --border-radius-sm: 0.5rem;
+            --border-radius-md: 0.75rem;
+            --border-radius-lg: 1.2rem;
+            /* Slightly larger for more modern feel */
+            --hero-design-bg-color: #E0F2F7;
+            /* Light blue background for hero design pseudo-element */
+        }
+
+        body {
+            font-family: 'Nunito', sans-serif;
+            color: var(--dark-text);
+            /* Default body text color */
+            line-height: 1.6;
+            scroll-behavior: smooth;
+            background-color: var(--light-section-bg);
+            /* Default body background */
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .navbar-brand {
+            font-family: 'Pacifico', cursive;
+            font-size: 1.8rem;
+        }
+
+        /* Utility classes */
+        .rounded-lg {
+            border-radius: var(--border-radius-lg) !important;
+        }
+
+        .rounded-md {
+            border-radius: var(--border-radius-md) !important;
+        }
+
+        .shadow-custom {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .text-accent {
+            color: var(--accent-color) !important;
+        }
+
+        .bg-light-gray {
+            background-color: #f0f2f5;
+        }
+
+        /* Used for projects section */
+
+        /* Navbar */
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.95) !important;
+            /* Light translucent background */
+            backdrop-filter: blur(10px);
+            /* Frosted glass effect */
+            padding: 1.5rem 0;
+            position: fixed;
+            /* Changed to fixed for consistency */
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            /* Subtle shadow */
+        }
+
+        .navbar-brand {
+            font-weight: 800;
+            font-size: 1.5rem;
+            color: var(--dark-text) !important;
+            /* Dark text for logo on light background */
+        }
+
+        .navbar-nav .nav-link {
+            color: var(--dark-text) !important;
+            /* Dark text for links */
+            font-weight: 500;
+            margin: 0 0.75rem;
+            transition: color 0.3s ease, transform 0.2s ease;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: var(--accent-color) !important;
+            transform: translateY(-2px);
+        }
+
+        .navbar-toggler {
+            border: none;
+        }
+
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+            /* Darker icon for light navbar */
+        }
+
+        /* Hero Section */
+        #hero {
+            background-color: var(--light-section-bg);
+            /* Light background for hero */
+            color: var(--dark-text);
+            /* Dark text on light background */
+            padding: 8rem 0 0;
+            /* Adjusted padding to extend below navbar */
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding-bottom: 10rem;
+            /* Add extra padding for image overlap */
+        }
+
+        #hero h1 {
+            font-size: 3.8rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            animation: fadeInDown 1s ease-out;
+            color: var(--dark-text);
+            /* Ensure heading is dark */
+        }
+
+        #hero .lead {
+            font-size: 1.25rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease-out 0.3s forwards;
+            opacity: 0;
+            color: var(--secondary-text);
+            /* Ensure lead text is readable */
+        }
+
+        .hero-img-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* Center image vertically */
+            z-index: 1;
+            padding-top: 2rem;
+            /* Add padding for visual separation */
+            margin-bottom: -10rem;
+            /* Pull image up to overlap next section */
+        }
+
+        .hero-img-container .design-visual {
+            width: 85%;
+            /* Adjust size */
+            height: 450px;
+            /* Fixed height for the design */
+            background-color: var(--hero-design-bg-color);
+            /* Base background for the design */
+            /* Abstract SVG design for hero section */
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3Cfilter id='f1'%3E%3CfeGaussianBlur in='SourceGraphic' stdDeviation='5' /%3E%3C/filter%3E%3C/defs%3E%3Ccircle cx='30' cy='30' r='15' fill='%238C82F2' filter='url(%23f1)' opacity='0.7'/%3E%3Ccircle cx='70' cy='60' r='20' fill='%2390CAF9' filter='url(%23f1)' opacity='0.6'/%3E%3Crect x='10' y='50' width='25' height='25' fill='%236C63FF' filter='url(%23f1)' opacity='0.5'/%3E%3Cpath d='M20 10 L80 10 L90 20 L30 80 Z' fill='%23A7D9F8' opacity='0.4' filter='url(%23f1)'/%3E%3C/svg%3E");
+            background-size: cover;
+            background-position: center;
+            border-radius: var(--border-radius-lg);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            /* Lighter shadow for light theme */
+            animation: zoomIn 1s ease-out 0.6s forwards;
+            opacity: 0;
+            position: relative;
+            z-index: 2;
+            overflow: hidden;
+            /* Ensure content stays within bounds */
+        }
+
+        /* Pseudo-element for the blob-like background behind the hero design */
+        .hero-img-container::before {
+            content: '';
+            position: absolute;
+            width: 90%;
+            /* Larger than visual */
+            height: 110%;
+            /* Taller than visual */
+            background-color: rgba(var(--accent-color), 0.08);
+            /* Very subtle accent background */
+            border-radius: var(--border-radius-lg);
+            transform: rotate(-5deg) translateY(5%);
+            /* Slight rotation and offset */
+            bottom: -5%;
+            /* Position it below the visual */
+            z-index: 1;
+            /* Behind the visual */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            /* Subtle shadow */
+        }
+
+        .tag-badge {
+            background-color: var(--primary-blue);
+            /* Distinct background for badges */
+            color: var(--light-text);
+            padding: 0.4rem 0.9rem;
+            border-radius: var(--border-radius-sm);
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+            display: inline-flex;
+            align-items: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .tag-badge:hover {
+            background-color: #0056b3;
+            color: white;
+            /* Darken primary blue on hover */
+        }
+
+        .tag-badge i {
+            margin-right: 0.5rem;
+        }
+
+        .stats-text {
+            color: var(--secondary-text);
+            /* Adjusted for readability on light background */
+            font-size: 0.9rem;
+            margin-top: 1rem;
+        }
+
+        .stats-text i {
+            color: var(--accent-color);
+        }
+
+        .hire-me-btn {
+            background-color: var(--primary-blue);
+            color: var(--light-text);
+            padding: 0.75rem 2rem;
+            border-radius: var(--border-radius-md);
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+        }
+
+        .hire-me-btn:hover {
+            background-color: #0056b3;
+            /* Darken primary blue on hover */
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 123, 255, 0.4);
+            color: white;
+        }
+
+        /* Section dividers (like the image) */
+        .section-divider {
+            background-color: var(--dark-section-bg);
+            /* Dark background for contrast */
+            color: var(--light-text);
+            /* Light text on dark background */
+            padding: 1.5rem 0;
+            text-align: center;
+            position: relative;
+            z-index: 5;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            margin-top: -5rem;
+            /* Overlaps with the section above */
+            border-bottom-left-radius: var(--border-radius-lg);
+            border-bottom-right-radius: var(--border-radius-lg);
+        }
+
+        .divider-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .divider-item i {
+            color: var(--accent-color);
+        }
+
+        /* General Section Styling */
+        section {
+            padding: 6rem 0;
+            background-color: var(--light-section-bg);
+            /* Default light section background */
+            color: var(--dark-text);
+            /* Default text color for sections */
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 2.5rem;
+            position: relative;
+            display: inline-block;
+            color: var(--dark-text);
+            /* Ensure title is dark */
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            width: 60px;
+            height: 4px;
+            background-color: var(--accent-color);
+            border-radius: 5px;
+        }
+
+        /* About Section (I like to make simple and elegant design) */
+        #about-intro {
+            padding: 6rem 0;
+            text-align: center;
+            background-color: var(--light-section-bg);
+            /* Explicitly light */
+            color: var(--dark-text);
+        }
+
+        #about-intro .lead {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: var(--dark-text);
+            /* Darker text for main heading */
+        }
+
+        #about-intro p {
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--secondary-text);
+        }
+
+        .social-follow a {
+            font-size: 1.8rem;
+            color: var(--secondary-text);
+            /* Adjusted for readability on light background */
+            margin: 0 0.8rem;
+            transition: color 0.3s ease, transform 0.2s ease;
+        }
+
+        .social-follow a:hover {
+            color: var(--primary-blue);
+            transform: translateY(-3px);
+        }
+
+        #experience .card {
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background: #fff;
+        }
+
+        #experience .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        #experience .card-body {
+            padding: 2rem 2rem 2.5rem;
+        }
+
+        #experience .card-title {
+            font-size: 1.4rem;
+            letter-spacing: 0.02em;
+        }
+
+        #experience .company-logo {
+            height: 48px;
+            width: 48px;
+            background: #e9ecef;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: #6c757d;
+            font-size: 1.1rem;
+            margin-right: 12px;
+        }
+
+        #experience .date-badge {
+            background-color: #0d6efd;
+            color: white;
+            font-size: 0.85rem;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        #experience ul li {
+            margin-bottom: 0.7rem;
+        }
+
+        /* Skills Section */
+        #skills {
+            background-color: var(--bg-light-gray);
+            /* Subtle background for skills */
+            text-align: center;
+        }
+
+        .skill-category-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 2.5rem;
+            color: var(--dark-text);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 0.5rem;
+        }
+
+        .skill-category-title::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent-color);
+            border-radius: 5px;
+        }
+
+        .skill-item-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-md);
+            padding: 1.5rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 120px;
+            text-align: center;
+        }
+
+        .skill-item-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .skill-item-card i {
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 0.75rem;
+        }
+
+        .skill-item-card span {
+            font-weight: 600;
+            color: var(--dark-text);
+            font-size: 1rem;
+        }
+
+        /* Projects Section */
+        #projects {
+            background-color: var(--light-section-bg);
+            /* Changed to light-section-bg for consistency */
+        }
+
+        .project-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 1px solid #eee;
+        }
+
+        .project-card-body {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .project-card h5 {
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: var(--dark-text);
+        }
+
+        .project-tags .badge {
+            background-color: #e9ecef;
+            /* Light gray badge background */
+            color: var(--secondary-text);
+            /* Darker text on badge */
+            font-weight: 500;
+            padding: 0.5em 0.8em;
+            border-radius: var(--border-radius-sm);
+            margin-right: 0.5rem;
+            font-size: 0.85rem;
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .project-header .btn {
+            background-color: transparent;
+            border: 1px solid var(--accent-color);
+            color: var(--accent-color);
+            padding: 0.6rem 1.5rem;
+            border-radius: var(--border-radius-md);
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .project-header .btn:hover {
+            background-color: var(--accent-color);
+            color: var(--light-text);
+        }
+
+
+        /* Companies Section */
+        #companies {
+            background-color: var(--bg-light-gray);
+            /* Changed to bg-light-gray for consistency */
+            padding: 6rem 0;
+            text-align: center;
+            color: var(--dark-text);
+            /* Ensure text is dark */
+        }
+
+        .company-logo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 2rem;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .company-logo {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-md);
+            padding: 1.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            font-size: 1.2rem;
+            /* Size for text logos */
+            font-weight: 700;
+            color: var(--secondary-text);
+            /* Default muted color for logos */
+        }
+
+        .company-logo:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            color: var(--primary-blue);
+            /* Color on hover */
+        }
+
+        #contact-footer {
+            scroll-margin-top: 80px;
+            /* adjust if your navbar is taller */
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-section-bg);
+            /* Dark background for footer */
+            color: var(--secondary-text);
+            /* Secondary text color on dark background */
+            padding: 4rem 0 2rem;
+            font-size: 0.95rem;
+        }
+
+        footer a {
+            color: var(--secondary-text);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: var(--light-text);
+        }
+
+        footer .list-unstyled li {
+            margin-bottom: 0.5rem;
+        }
+
+        footer h5 {
+            color: var(--light-text);
+            /* Light heading on dark background */
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-logo {
+            font-weight: 800;
+            font-size: 1.8rem;
+            color: var(--light-text) !important;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .email-signup {
+            background-color: rgba(255, 255, 255, 0.08);
+            /* White translucent background */
+            border-radius: var(--border-radius-md);
+            padding: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .email-signup input {
+            background-color: transparent;
+            border: none;
+            color: var(--light-text);
+            padding: 0.5rem;
+            flex-grow: 1;
+        }
+
+        .email-signup input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .email-signup input:focus {
+            outline: none;
+            box-shadow: none;
+        }
+
+        .email-signup .btn {
+            background-color: var(--primary-blue);
+            color: var(--light-text);
+            border-radius: var(--border-radius-sm);
+            padding: 0.6rem 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .email-signup .btn:hover {
+            background-color: #0056b3;
+            /* Darken primary blue on hover */
+        }
+
+        .footer-social a {
+            font-size: 1.2rem;
+            margin-right: 1rem;
+            color: var(--secondary-text);
+        }
+
+        .footer-social a:hover {
+            color: var(--light-text);
+        }
+
+        /* Animations */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .animate-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .animate-on-scroll.fade-in {
+            transition-delay: 0s;
+        }
+
+        .animate-on-scroll.slide-up {
+            transition-delay: 0.1s;
+        }
+
+        .animate-on-scroll.scale-in {
+            transform: scale(0.95);
+            transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+            transition-delay: 0.2s;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes zoomIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 992px) {
+            #hero {
+                padding-top: 6rem;
+                min-height: auto;
+                padding-bottom: 5rem;
+            }
+
+            #hero h1 {
+                font-size: 2.8rem;
+            }
+
+            #hero .lead {
+                font-size: 1.1rem;
+            }
+
+            .hero-img-container {
+                margin-bottom: -5rem;
+            }
+
+            .hero-img-container .design-visual {
+                height: 350px;
+                /* Adjust height for smaller screens */
+            }
+
+            .hero-img-container::before {
+                width: 100%;
+                height: 100%;
+                transform: rotate(-3deg) translateY(0);
+            }
+
+            .section-divider {
+                margin-top: -3rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            #about-intro .lead {
+                font-size: 1.5rem;
+            }
+
+            .company-logo {
+                padding: 1rem;
+                min-height: 80px;
+            }
+
+            #cta-banner h2 {
+                font-size: 1.8rem;
+            }
+
+            footer .col-md-5,
+            footer .col-md-2,
+            footer .col-md-3 {
+                margin-bottom: 2rem;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .navbar-nav .nav-link {
+                margin: 0.5rem 0;
+            }
+
+            .navbar-collapse {
+                background-color: rgba(255, 255, 255, 0.95);
+                /* Light background for mobile menu */
+                border-radius: var(--border-radius-md);
+                padding: 1rem;
+                margin-top: 1rem;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            .hero-img-container {
+                align-items: center;
+                margin-bottom: -3rem;
+            }
+
+            .hero-img-container .design-visual {
+                height: 300px;
+            }
+
+            .section-divider {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .project-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="/">Siddhartha.dev</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#hero">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about-intro">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#experience">Experience</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Skills</a> <!-- Added Skills link -->
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Works</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact-form">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Hero -->
+    <section id="hero" class="d-flex align-items-center" style="min-height: 100vh;">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center d-flex flex-column justify-content-center">
+                    <h1>Hello, I'm Siddhartha Gurram</h1>
+                    <p class="lead">
+                        Software Developer @Addepar | Ex-LTIMindtree | Full-Stack Engineer | Cloud & DevOps Enthusiast |
+                        Microservices & Security Expert
+
+                        Experienced in building scalable full-stack apps using Node.js, Spring Boot, React.js, and
+                        deploying secure, high-performance systems on AWS & Azure.
+                    </p>
+                    <div class="d-flex flex-wrap mb-4 justify-content-center">
+                        <span class="tag-badge me-2 mb-2"><i class="fas fa-laptop-code"></i> Frontend Developer</span>
+                        <span class="tag-badge me-2 mb-2"><i class="fas fa-server"></i> Backend Developer</span>
+                        <span class="tag-badge mb-2"><i class="fas fa-cloud"></i> DevOps & Cloud Engineer</span>
+                    </div>
+                    <div class="d-flex justify-content-center gap-3">
+                        <a href="https://www.linkedin.com/in/siddhartha29/" target="_blank" class="btn hire-me-btn">
+                            Connect <i class="fas fa-arrow-right ms-2"></i>
+                        </a>
+                        <a href="assets/Resume.pdf" download class="btn hire-me-btn">
+                            Download Resume <i class="fas fa-download ms-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+    <!-- About Section -->
+    <section id="about-intro" class="animate-on-scroll fade-in py-5">
+        <div class="container">
+            <!-- Centered Heading -->
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h2 class="section-title mb-5 animate-on-scroll slide-up">About Me</h2>
+                </div>
+            </div>
+
+            <div class="row align-items-center flex-column flex-lg-row">
+                <!-- Profile Image -->
+                <div class="col-lg-4 text-center mb-4 mb-lg-0 order-1 order-lg-1">
+                    <img src="https://images.unsplash.com/photo-1676511594858-1b75b7eee5bb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="Profile Photo" class="img-fluid rounded shadow" style="max-width: 450px;">
+                </div>
+
+                <!-- About Text -->
+                <div class="col-lg-8 order-2 order-lg-2">
+                    <p class="animate-on-scroll slide-up" style="transition-delay: 0.1s;">
+                        I’m a passionate Software Developer currently working at Addepar, with prior experience at
+                        LTIMindtree.
+                        With a strong foundation in full-stack development, cloud computing, and DevOps, I specialize in
+                        building scalable, secure, and high-performance applications.
+                    </p>
+                    <p class="animate-on-scroll slide-up" style="transition-delay: 0.2s;">
+                        💻 My expertise lies in Node.js, Spring Boot, and React.js, allowing me to deliver robust
+                        backend
+                        systems and dynamic, user-friendly frontends. I have hands-on experience deploying
+                        microservice-based
+                        architectures on AWS and Azure, ensuring seamless scalability and system reliability.
+                    </p>
+                    <p class="animate-on-scroll slide-up" style="transition-delay: 0.3s;">
+                        🔐 With a keen interest in security and cloud infrastructure, I thrive on solving complex
+                        problems,
+                        optimizing systems, and delivering high-impact software solutions that make a difference.
+                    </p>
+                    <div class="mt-4 animate-on-scroll fade-in" style="transition-delay: 0.4s;">
+                        <p class="mb-3 text-muted">Follow me on :</p>
+                        <div class="social-follow">
+                            <a href="https://instagram.com/mark" target="_blank" aria-label="Instagram"><i
+                                    class="fab fa-instagram"></i></a>
+                            <a href="https://github.com/markse" target="_blank" aria-label="GitHub"><i
+                                    class="fab fa-github"></i></a>
+                            <a href="https://linkedin.com/in/mark" target="_blank" aria-label="LinkedIn"><i
+                                    class="fab fa-linkedin-in"></i></a>
+                            <a href="https://twitter.com/markse" target="_blank" aria-label="Twitter"><i
+                                    class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Experience -->
+
+    <section id="experience" class="py-5" style="scroll-margin-top: 100px; background: #f8f9fa;">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h2 class="section-title" style="font-weight: 700; font-size: 2.5rem;">
+                    Experience
+                </h2>
+            </div>
+
+            <div class="row g-5">
+
+                <!-- Card 1 -->
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+
+                                <h4 class="card-title mb-0 fw-bold">Software Developer, <span
+                                        class="text-primary">Addepar</span></h4>
+                            </div>
+                            <div class="date-badge">July 2024 – Present</div>
+                            <ul class="ps-3 text-muted">
+                                <li>Developed a Multi-Asset Robo-Advisory Platform (GraphQL APIs, Node.js, Nest.js,
+                                    Kafka, gRPC) serving 100K+ investors.</li>
+                                <li>Optimized PostgreSQL/TimescaleDB databases, reducing query latency by 40% and
+                                    achieving 99.98% uptime.</li>
+                                <li>Built React.js (Next.js) frontend with WebSockets for live updates and SSR for SEO.
+                                </li>
+                                <li>Implemented robust security (OAuth 2.0, JWT, RBAC, PCI DSS) and comprehensive
+                                    testing.</li>
+                                <li>Deployed CI/CD pipelines on AWS with Prometheus/Grafana, reducing deployment
+                                    failures by 85%.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+
+                                <h4 class="card-title mb-0 fw-bold">Associate Software Developer, <span
+                                        class="text-primary">LTIMindtree</span></h4>
+                            </div>
+                            <div class="date-badge">Jan 2021 – Aug 2022</div>
+                            <ul class="ps-3 text-muted">
+                                <li>Developed scalable Multi-Vendor Marketplace Platform handling 1M+ daily
+                                    transactions.</li>
+                                <li>Enhanced frontend with A/B testing, Tailwind CSS, and Material UI for 40% faster
+                                    load time.</li>
+                                <li>Optimized PostgreSQL DB with partitioning, indexing, and Redis caching.</li>
+                                <li>Implemented enterprise-grade security protecting 500K+ daily logins.</li>
+                                <li>Built robust CI/CD pipelines using Azure DevOps and Terraform for zero-downtime
+                                    updates.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- Skills Section -->
+    <section id="skills" class="animate-on-scroll fade-in">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">My Core Skills</h2>
+
+            <!-- Frontend -->
+            <div class="row mb-5">
+                <div class="col-12 text-center animate-on-scroll slide-up">
+                    <h3 class="skill-category-title">Frontend Development</h3>
+                </div>
+                <div class="col-12">
+                    <div class="row g-4 justify-content-center">
+                        <div class="col-6 col-md-3 col-lg-2 animate-on-scroll scale-in">
+                            <div class="skill-item-card">
+                                <i class="devicon-react-original colored"></i><span>React</span>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3 col-lg-2 animate-on-scroll scale-in"
+                            style="transition-delay: 0.05s;">
+                            <div class="skill-item-card">
+                                <i class="devicon-angularjs-plain colored"></i><span>Angular</span>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3 col-lg-2 animate-on-scroll scale-in" style="transition-delay: 0.1s;">
+                            <div class="skill-item-card">
+                                <i class="devicon-vuejs-plain colored"></i><span>Vue.js</span>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3 col-lg-2 animate-on-scroll scale-in"
+                            style="transition-delay: 0.15s;">
+                            <div class="skill-item-card">
+                                <i class="devicon-html5-plain colored"></i><span>HTML5</span>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3 col-lg-2 animate-on-scroll scale-in" style="transition-delay: 0.2s;">
+                            <div class="skill-item-card">
+                                <i class="devicon-css3-plain colored"></i><span>CSS3</span>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3 col-lg-2 animate-on-scroll scale-in"
+                            style="transition-delay: 0.25s;">
+                            <div class="skill-item-card">
+                                <i class="devicon-javascript-plain colored"></i><span>JavaScript</span>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3 col-lg-2 animate-on-scroll scale-in" style="transition-delay: 0.3s;">
+                            <div class="skill-item-card">
+                                <i class="devicon-nextjs-plain"></i><span>Next.js</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Backend & Databases -->
+            <div class="row mb-5">
+                <div class="col-12 text-center animate-on-scroll slide-up" style="transition-delay: 0.35s;">
+                    <h3 class="skill-category-title">Backend & Databases</h3>
+                </div>
+                <div class="col-12">
+                    <div class="row g-4 justify-content-center">
+                        <div class="col-6 col-md-3 col-lg-2 animate-on-scroll scale-in" style="transition-delay: 0.4s;">
+                            <div class="skill-item-card">
+                                <i class="devicon-nodejs-plain colored"></i><span>Node.js</span>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3 col-lg-2 animate-on-scroll scale-in"
+                            style="transition-delay: 0.45s;">
+                            <div class="skill-item-card">
+                                <i class="devicon-express-original colored"></i><span>Express.js</span>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3 col-lg-2 animate-on-scroll scale-in" style="transition-delay: 0.5s;">
+                            <div class="skill-item-card">
+                                <i class="devicon-mongodb-plain colored"></i><span>MongoDB</span>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3 col-lg-2 animate-on-scroll scale-in"
+                            style="transition-delay: 0.55s;">
+                            <div class="skill-item-card">
+                                <i class="devicon-mysql-plain colored"></i><span>SQL</span>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3 col-lg-2 animate-on-scroll scale-in" style="transition-delay: 0.6s;">
+                            <div class="skill-item-card">
+                                <i class="devicon-python-plain colored"></i><span>Python</span>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3 col-lg-2 animate-on-scroll scale-in"
+                            style="transition-delay: 0.65s;">
+                            <div class="skill-item-card">
+                                <i class="devicon-java-plain colored"></i><span>Java</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DevOps & Cloud -->
+            <div class="row">
+                <div class="col-12 text-center animate-on-scroll slide-up" style="transition-delay: 0.7s;">
+                    <h3 class="skill-category-title">DevOps & Cloud</h3>
+                </div>
+                <div class="col-12">
+                    <div class="row g-4 justify-content-center">
+                        <div class="col-6 col-md-3 col-lg-2 animate-on-scroll scale-in"
+                            style="transition-delay: 0.75s;">
+                            <div class="skill-item-card">
+                                <i class="devicon-docker-plain colored"></i><span>Docker</span>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3 col-lg-2 animate-on-scroll scale-in" style="transition-delay: 0.8s;">
+                            <div class="skill-item-card">
+                                <i class="devicon-kubernetes-plain colored"></i><span>Kubernetes</span>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3 col-lg-2 animate-on-scroll scale-in"
+                            style="transition-delay: 0.85s;">
+                            <div class="skill-item-card">
+                                <i class="devicon-git-plain colored"></i><span>CI/CD</span>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3 col-lg-2 animate-on-scroll scale-in" style="transition-delay: 0.9s;">
+                            <div class="skill-item-card">
+                                <i class="devicon-azure-plain colored"></i><span>Azure</span>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3 col-lg-2 animate-on-scroll scale-in"
+                            style="transition-delay: 0.95s;">
+                            <div class="skill-item-card">
+                                <i class="devicon-amazonwebservices-plain colored"></i><span>AWS</span>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3 col-lg-2 animate-on-scroll scale-in" style="transition-delay: 1.0s;">
+                            <div class="skill-item-card">
+                                <i class="devicon-git-plain colored"></i><span>Git</span>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3 col-lg-2 animate-on-scroll scale-in"
+                            style="transition-delay: 1.05s;">
+                            <div class="skill-item-card">
+                                <i class="devicon-github-original colored"></i><span>GitHub</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Latest Projects Section -->
+    <section id="projects" class="bg-light-gray">
+        <div class="container">
+            <div class="project-header animate-on-scroll fade-in" style="text-align: center; margin-bottom: 1.5rem;">
+                <h2 class="section-title" style="display: inline-block; margin: 0 auto;">Works</h2>
+            </div>
+            <div class="row mt-5 g-4">
+                <!-- Project Card 1: Web Application Development -->
+                <div class="col-lg-4 col-md-6 animate-on-scroll scale-in">
+                    <div class="project-card">
+                        <img src="assets/team-nocoloco-OX1TXahR7Ng-unsplash.jpg" alt="Web App Platform" />
+                        <div class="project-card-body">
+                            <h5>Scalable Web Application Platform</h5>
+                            <div class="project-tags">
+                                <span class="badge">Frontend</span>
+                                <span class="badge">Backend</span>
+                                <span class="badge">Deployment</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project Card 2: Cloud Microservices -->
+                <div class="col-lg-4 col-md-6 animate-on-scroll scale-in" style="transition-delay: 0.1s;">
+                    <div class="project-card">
+                        <img src="assets/rubaitul-azad-mJyAMTeyp-A-unsplash.jpg" alt="Cloud Microservices" />
+                        <div class="project-card-body">
+                            <h5>Cloud Microservices Architecture</h5>
+                            <div class="project-tags">
+                                <span class="badge">Azure</span>
+                                <span class="badge">Docker</span>
+                                <span class="badge">CI/CD</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project Card 3: CI/CD Pipeline Automation -->
+                <div class="col-lg-4 col-md-6 animate-on-scroll scale-in" style="transition-delay: 0.2s;">
+                    <div class="project-card">
+                        <img src="assets/Personal Finance - Dashboard.jpeg" alt="CI/CD Automation" />
+                        <div class="project-card-body">
+                            <h5>Automated CI/CD Pipelines</h5>
+                            <div class="project-tags">
+                                <span class="badge">DevOps</span>
+                                <span class="badge">Azure DevOps</span>
+                                <span class="badge">Automation</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- Contact Form Section -->
+    <section id="contact-form" class="animate-on-scroll fade-in mb-5 py-5 bg-light" style="scroll-margin-top: 80px;">
+        <div class="container">
+            <div class="project-header animate-on-scroll fade-in" style="text-align: center; margin-bottom: 1.5rem;">
+                <h2 class="section-title" style="display: inline-block; margin: 0 auto;">Get in Touch</h2>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <form>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Your Name</label>
+                            <input type="text" class="form-control" id="name" placeholder="Enter your name" required
+                                style="
+                                border-radius: 8px;
+                                border: 1px solid #ced4da;
+                                box-shadow: 0 2px 6px rgb(0 0 0 / 0.05);
+                                padding: 12px 15px;
+                                transition: border-color 0.3s ease, box-shadow 0.3s ease;
+                            " onfocus="this.style.borderColor='#495057'; this.style.boxShadow='0 0 8px rgba(73,80,87,0.3)';"
+                                onblur="this.style.borderColor='#ced4da'; this.style.boxShadow='0 2px 6px rgb(0 0 0 / 0.05)';">
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Your Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="Enter your email" required
+                                style="
+                                border-radius: 8px;
+                                border: 1px solid #ced4da;
+                                box-shadow: 0 2px 6px rgb(0 0 0 / 0.05);
+                                padding: 12px 15px;
+                                transition: border-color 0.3s ease, box-shadow 0.3s ease;
+                            " onfocus="this.style.borderColor='#495057'; this.style.boxShadow='0 0 8px rgba(73,80,87,0.3)';"
+                                onblur="this.style.borderColor='#ced4da'; this.style.boxShadow='0 2px 6px rgb(0 0 0 / 0.05)';">
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Your Message</label>
+                            <textarea class="form-control" id="message" rows="5" placeholder="Write your message here"
+                                required style="
+                                border-radius: 8px;
+                                border: 1px solid #ced4da;
+                                box-shadow: 0 2px 6px rgb(0 0 0 / 0.05);
+                                padding: 12px 15px;
+                                transition: border-color 0.3s ease, box-shadow 0.3s ease;
+                                resize: vertical;
+                            " onfocus="this.style.borderColor='#495057'; this.style.boxShadow='0 0 8px rgba(73,80,87,0.3)';"
+                                onblur="this.style.borderColor='#ced4da'; this.style.boxShadow='0 2px 6px rgb(0 0 0 / 0.05)';"></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary">
+                                Send Message <i class="fas fa-paper-plane ms-2"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / Contact Section -->
+    <footer>
+        <div class="container ">
+            <div class="row">
+                <div class="col-md-5 mb-4 mb-md-0">
+                    <p class="footer-logo">Be Creative, Be Solutive</p>
+                    <p>Unlock the power of exceptional design and strategy to elevate your brand. Let's build something
+                        remarkable together.</p>
+                    <div class="email-signup mt-4">
+                        <input type="email" placeholder="Enter your email here" aria-label="Email for newsletter">
+                        <button class="btn"><i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+                <div class="col-md-2 col-6 mb-4 mb-md-0">
+                    <h5>Navigation</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#hero">Home</a></li>
+                        <li><a href="#about-intro">About</a></li>
+                        <li><a href="#skills">Skills</a></li> <!-- Added Skills link -->
+                        <li><a href="#projects">Works</a></li>
+                        <li><a href="#contact-footer">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2 col-6 mb-4 mb-md-0">
+                    <h5>Services</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Frontend Dev</a></li>
+                        <li><a href="#">Backend Dev</a></li>
+                        <li><a href="#">Cloud Solutions</a></li>
+                        <li><a href="#">DevOps</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Information</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="mailto:siddharth@workwebmail.com">siddharth@workwebmail.com</a></li>
+                        <li><a href="tel:+1-940-843-0660">+1-940-843-0660</a></li>
+                    </ul>
+                    <div class="footer-social mt-3">
+                        <a href="https://linkedin.com/in/markse" target="_blank" aria-label="LinkedIn"><i
+                                class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/markse" target="_blank" aria-label="GitHub"><i
+                                class="fab fa-github"></i></a>
+                        <a href="https://twitter.com/markse" target="_blank" aria-label="Twitter"><i
+                                class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="text-light mt-5">
+            <div class="text-center mt-4">
+                <p>&copy; 2025 All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <!-- Custom JavaScript for smooth scrolling and animations -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a.nav-link, .hire-me-btn, .btn').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    const targetId = this.getAttribute('href');
+
+                    // Check if it's an internal anchor link
+                    if (targetId && targetId.startsWith('#')) {
+                        e.preventDefault();
+                        const targetElement = document.querySelector(targetId);
+
+                        // Close the navbar toggler on mobile after clicking a link
+                        const navbarToggler = document.querySelector('.navbar-toggler');
+                        const navbarCollapse = document.querySelector('#navbarNav');
+                        if (navbarToggler && navbarCollapse.classList.contains('show')) {
+                            new bootstrap.Collapse(navbarCollapse, { toggle: false }).hide();
+                        }
+
+                        if (targetElement) {
+                            targetElement.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        }
+                    }
+                });
+            });
+
+            // Intersection Observer for scroll-triggered animations
+            const animateElements = document.querySelectorAll('.animate-on-scroll');
+
+            const observerOptions = {
+                root: null, // Use the viewport as the root
+                rootMargin: '0px',
+                threshold: 0.1 // Trigger when 10% of the element is visible
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        // No need to unobserve if elements are repeated or can re-trigger
+                        // If you want them to animate only once, uncomment the line below:
+                        // observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            animateElements.forEach(element => {
+                observer.observe(element);
+            });
+
+            // Handle hero section specific animations on load (triggered once)
+            const heroLead = document.querySelector('#hero .lead');
+            const heroDesignVisual = document.querySelector('#hero .hero-img-container .design-visual');
+
+            if (heroLead) {
+                heroLead.style.animationPlayState = 'running';
+            }
+            if (heroDesignVisual) {
+                heroDesignVisual.style.animationPlayState = 'running';
+            }
+        });
+    </script>
+</body>
+
+</html>
