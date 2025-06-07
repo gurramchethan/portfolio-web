@@ -29,6 +29,13 @@
 
     <!-- Custom CSS -->
     <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         #hero,
         #about-intro,
         #skills,
@@ -87,6 +94,10 @@
             font-size: 1.8rem;
         }
 
+        .navbar-toggler:focus {
+            box-shadow: none;
+        }
+
         /* Utility classes */
         .rounded-lg {
             border-radius: var(--border-radius-lg) !important;
@@ -142,6 +153,9 @@
             transition: color 0.3s ease, transform 0.2s ease;
         }
 
+        .nav-link{
+            font-weight: semi-bold;
+        }
         .navbar-nav .nav-link:hover {
             color: var(--accent-color) !important;
             transform: translateY(-2px);
