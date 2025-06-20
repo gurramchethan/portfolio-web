@@ -1285,7 +1285,34 @@
 
 
 <!-- Latest Projects Section -->
+<!-- Latest Projects Section -->
 <section id="projects" class="bg-light-gray">
+    <style>
+        .project-card {
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+        .project-tags {
+            margin-top: 0.75rem;
+        }
+        .project-tags .badge {
+            background-color: #6c63ff;
+            color: #fff;
+            padding: 0.4em 0.7em;
+            font-size: 0.75rem;
+            margin-right: 6px;
+            margin-bottom: 6px;
+            border-radius: 0.25rem;
+            display: inline-block;
+        }
+    </style>
+
     <div class="container">
         <div class="project-header animate-on-scroll fade-in" style="text-align: center; margin-bottom: 1.5rem;">
             <h2 class="section-title" style="display: inline-block; margin: 0 auto;">Works</h2>
@@ -1293,7 +1320,7 @@
         <div class="row mt-5 g-4">
             <!-- Project Card 1: Food Recipe App -->
             <div class="col-lg-4 col-md-6 animate-on-scroll fade-in">
-                <div class="project-card p-4 shadow-sm bg-white rounded">
+                <div class="project-card">
                     <h5>Food Recipe App</h5>
                     <p>Built a MERN stack app to create, edit, and search recipes with image uploads using Multer. Used Axios for API calls, React Router for navigation, and MongoDB for data storage.</p>
                     <div class="project-tags">
@@ -1309,7 +1336,7 @@
             </div>
             <!-- Project Card 2: Global Socio-Economic Visualization -->
             <div class="col-lg-4 col-md-6 animate-on-scroll fade-in" style="transition-delay: 0.1s;">
-                <div class="project-card p-4 shadow-sm bg-white rounded">
+                <div class="project-card">
                     <h5>Global Socio-Economic Visualization</h5>
                     <p>Merged datasets on population, blood types, and GDP to build interactive dashboards. Visualized trends using Tableau, Power BI, and d3.js for insightful analysis.</p>
                     <div class="project-tags">
@@ -1325,7 +1352,7 @@
             </div>
             <!-- Project Card 3: Library Management System -->
             <div class="col-lg-4 col-md-6 animate-on-scroll fade-in" style="transition-delay: 0.2s;">
-                <div class="project-card p-4 shadow-sm bg-white rounded">
+                <div class="project-card">
                     <h5>Library Management System</h5>
                     <p>Developed a responsive web app for managing books and users. Included borrow/return features, input validation, and tested thoroughly for reliability.</p>
                     <div class="project-tags">
